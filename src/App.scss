@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Open+Sans&display=swap');
+
+$LightCyan: hsl(193, 38%, 86%);
+$NeonGreen: hsl(150, 100%, 66%);
+$GrayishBlue: hsl(217, 19%, 38%);
+$DarkGrayishBlue: hsl(217, 19%, 24%);
+$DarkBlue: hsl(218, 23%, 16%);
+
+$borderradius: 0.625rem;
+
+$mobile: 375px;
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+
+body {
+  @include flex;
+  padding: 1.25rem;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 1.75rem;
+  background-color: hsl(218, 23%, 16%);
+  text-align: center;
+  height: 100vh;
+}
+.attribution {
+  margin-top: 10vh;
+  color: $LightCyan;
+  font-size: 12px;
+
+  a {
+    color: $NeonGreen;
+  }
+}
+.title {
+  letter-spacing: 0.3125rem;
+  color: $NeonGreen;
+  font-size: 0.0625rem;
+  text-transform: uppercase;
+}
+.text {
+  color: $LightCyan;
+  margin: 1.875rem auto;
+}
+
+.container {
+  padding: 2rem 2rem 3rem;
+  max-width: 500px;
+  border-radius: $borderradius;
+  background-color: $DarkGrayishBlue;
+
+  .desktop {
+    display: block;
+  }
+  .mobile {
+    display: none;
+  }
+
+  @media (max-width: $mobile) {
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: block;
+    }
+  }
+}
+
+.btn {
+  background-color: $NeonGreen;
+  position: relative;
+  top: -30px;
+  padding: 20px;
+  border: none;
+  border-radius: 50%;
+
+  &:hover {
+    box-shadow: 1px 0px 30px -10px $NeonGreen, -1px 0px 30px -10px $NeonGreen,
+      0px 1px 30px -10px $NeonGreen, 0px -1px 30px -10px $NeonGreen;
+    cursor: pointer;
+  }
+}
